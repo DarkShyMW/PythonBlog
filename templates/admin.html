@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Админ-панель{% endblock %}
+{% block content %}
+    <h2>Админ-панель</h2>
+    <a href="{{ url_for('logout') }}" class="button logout">Выйти</a>
+    
+    <form method="POST" class="admin-form">
+        <h3>Новая статья</h3>
+        <input type="text" name="title" placeholder="Заголовок" required>
+        <textarea name="content" placeholder="Содержимое (Markdown)" required></textarea>
+        <button type="submit" name="action" value="create">Создать</button>
+    </form>
+
+    <h3>Существующие статьи</h3>
+    <div class="articles-list">
+        {% for article in articles %}
+            <div class="article-card">
+                <h4>{{ article.title }} (Просмотров: {{ article.views }})</h4>
+                <form method="POST" style="display: inline;">
+                    <input type="hidden" name="filename" value="{{ article.filename }}">
+                    <button type="submit" name="action" value="delete">Удалить</button>
+                </form>
+                <a href="{{ url_for('edit', filename=article.filename) }}" class="button">Редактировать</a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

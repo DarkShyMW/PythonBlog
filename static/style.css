@@ -1,0 +1,156 @@
+:root {
+    --primary: #1a73e8;    /* Синий */
+    --secondary: #fbbc05;  /* Желтый */
+    --background: #f8f9fa; /* Светло-серый */
+    --text: #202124;       /* Темно-серый */
+    --card-bg: #ffffff;    /* Белый */
+    --accent: #ea4335;     /* Красный */
+}
+
+body {
+    font-family: 'Roboto', 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+header {
+    background: var(--primary);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+nav a {
+    color: white;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: var(--secondary);
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+h2, h3 {
+    color: var(--primary);
+}
+
+.articles-list {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.article-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.article-card a {
+    text-decoration: none;
+    color: var(--primary);
+}
+
+.article-card h4 {
+    margin: 0 0 0.5rem 0;
+}
+
+.content {
+    line-height: 1.8;
+}
+
+.admin-form {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+input, textarea {
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 250px;
+    font-family: 'Courier New', monospace;
+}
+
+button, .button {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+button:hover, .button:hover {
+    background: #1557b0; /* Темнее синего */
+}
+
+.views {
+    color: #666;
+    font-size: 0.9em;
+    margin: 0.5rem 0;
+}
+
+.error {
+    color: var(--accent);
+    margin: 0.5rem 0;
+}
+
+.logout {
+    background: var(--accent);
+}
+
+.logout:hover {
+    background: #c5221f; /* Темнее красного */
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 1rem;
+    }
+    
+    nav a {
+        margin: 0 0.5rem;
+    }
+    
+    main {
+        margin: 1rem auto;
+        padding: 0 0.5rem;
+    }
+}
